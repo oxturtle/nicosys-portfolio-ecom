@@ -72,6 +72,7 @@ Some of the suggestions I provided included:
 ---
 
 ## Repository Structure  
+```text
 data/
 ├── raw/          # Original source data
 ├── cleaned/      # Processed and analysis-ready datasets
@@ -82,3 +83,4 @@ powerbi           # powerbi files
 presentation      # files involving presentation of e-com portfolio
 sql/              # PostgreSQL queries and transformations
 reports/          # summaries, and insights
+```
