@@ -123,6 +123,16 @@ Business Insight
 */
 
 
+/*
+Business Question:
+What are the top purchasing states? 
+Stakeholder
+Purpose
+SQL Query
+Findings:
+Business Insight 
+*/
+
 --Total sales by state
 Select 
 	  sum(ss.gross_sales) as total_sales_by_product
@@ -135,9 +145,11 @@ Order By
 	total_sales_by_product desc
 ;
 
---Top 3 Highest Sales by State
+
+
+--Highest Sales by product from Top 3 Selling States 
 Select
-	sum(total_sales_by_product)
+	sum(total_sales_by_product) Total_sales_top_states_products
 From 
 	(
 		Select
@@ -149,8 +161,7 @@ From
 			squarespace_s ss
 		
 		Where
-			product_name != 'Anime Mystery Box'
-			and product_name != 'Naruto Hoodie'
+			product_name in ('Anime Mystery Box', 'Naruto Hoodie') 
 
 		Group By
 			  ss.state
@@ -164,6 +175,27 @@ From
 ;
 
 
+--Within the highest purchasing states, what products accunted for the most sales? 
+--Products sold in top purcashing states
+Select
+			  sum(ss.gross_sales) as total_sales_by_product
+			, ss.state
+			, ss.product_name
+
+		From
+			squarespace_s ss
+		
+		--Where
+		--	product_name in ('Anime Mystery Box', 'Naruto Hoodie') 
+
+		Group By
+			  ss.state
+			, product_name
+		Having
+			ss.state in ('Texas', 'California', 'Florida')
+
+		Order By
+			total_sales_by_product desc
 
 
 --total ss refunds
