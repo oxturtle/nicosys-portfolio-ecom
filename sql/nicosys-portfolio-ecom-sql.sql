@@ -5,6 +5,7 @@ Purpose
 SQL Query
 Findings:
 Business Insight 
+Recommendation:
 */
 
 
@@ -27,12 +28,18 @@ SQL Query: Query Below
 
 Findings:
 Squarespace: Total Gross Sales: $379,500.00 | Total Net Sales: $339,287.77
-TikTok shop export only contained gross sales: Total Gross Sales $968,587.16
+TikTok Shop export only contained gross sales: Total Gross Sales $968,587.16
 
 Business Insight:
-TikTok Shop generates 74% of business sales while Squarespace generates the remaining 26%.
-TikTok shop didn't have gross sales data. Squarespace gross sales were 
+TikTok Shop generated 74% of business sales while Squarespace made up the remaining 26%.
+TikTok Shop didn't have gross sales data, only net. Squarespace gross sales were $379,500.00.
+TikTok Shop's total net sales were $968,587.16, and Squarespace net sales were $339,287.77. 
+The total sales overall for the company was $1,307,874.93. 
 
+Recommendation:
+On TikTok Shop and Squarespace, define the products that are responsible for generating the most sales, and then allocate more of the marketing budget towards those products. 
+Investigate Squarespace operational metrics and marketing to try and increase sales from Squarespace.
+Obtain gross sales data from TikTok to get a better metric of overall TikTok Sales versus expenese.  
 */
 
 --Total Gross and Net Squarespace sales
@@ -47,7 +54,7 @@ From
 
 --total tiktok sales
 Select
-	sum(total_sales) as total_gross_tiktok_sales
+	sum(total_sales) as total_tiktok_sales
 From
 	tiktok_s
 ;
@@ -113,14 +120,7 @@ Order By
 
 
 
-/*
-Business Question
-Stakeholder
-Purpose
-SQL Query
-Findings:
-Business Insight 
-*/
+
 
 
 /*
@@ -130,8 +130,10 @@ Stakeholder
 Purpose
 SQL Query
 Findings:
-Business Insight 
+Business Insight
+Reccomendation:
 */
+
 
 --Total sales by state
 Select 
