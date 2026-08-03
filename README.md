@@ -10,7 +10,8 @@ The main questions I set out to answer were:
 
 1. **Which products are selling the most?**  
 2. **Which regions bring in the most revenue?**  
-3. **What recommendations can help boost future sales?**
+3. **Between the two platforms how much does the business earn?**
+4. **What recommendations can help boost future sales?**
 
 ---
 
@@ -33,7 +34,6 @@ Since the business operates on both platforms, I merged everything into one cons
 
 ### Excel  
 - Validating SQL results  
-- Spot‑checking data quality  
 - Quick pivot checks  
 
 ### Power BI  
@@ -47,6 +47,7 @@ Since the business operates on both platforms, I merged everything into one cons
 - Pulled raw synthetic data from TikTok Shop and Squarespace  
 - Cleaned and standardized fields (dates, product names, regions, etc.)  
 - Used SQL joins to combine everything into one unified dataset  
+- Implemented null-handling strategy to support consistnet numeric computations
 - Double‑checked accuracy in Excel  
 - Built a Power BI dashboard to highlight insights  
 - Summarized recommendations based on the patterns in the data  
@@ -64,7 +65,7 @@ Since the business operates on both platforms, I merged everything into one cons
 ## Recommendations  
 Some of the suggestions I provided included:
 
-- Stocking more of the high‑performing SKUs  
+- Stocking more of the high‑performing products  
 - Focusing marketing efforts on the strongest regions  
 - Improving product visibility on the weaker platform  
 - Using TikTok’s viral nature to push certain product categories  
@@ -72,15 +73,15 @@ Some of the suggestions I provided included:
 ---
 
 ## Repository Structure  
-```text
+```
 data/
-├── raw/          # Original source data
-├── cleaned/      # Processed and analysis-ready datasets
-documentation/    # Word files and PDFs updating project progress
-excel-validation  # Checking for accurcy of SQL findings
-images            # Images used for this project
-powerbi           # powerbi files
-presentation      # files involving presentation of e-com portfolio
-sql/              # PostgreSQL queries and transformations
-reports/          # summaries, and insights
+├── raw/           # Original source data
+├── cleaned/       # Processed and analysis-ready datasets
+documentation/     # Word files and PDFs updating project progress
+excel-validation/  # Checking for accurcy of SQL findings
+images/            # Images used for this project
+powerbi/           # powerbi files
+presentation/      # files involving presentation of e-com portfolio
+reports/           # summaries, and insights
+sql/               # PostgreSQL queries and transformations
 ```
