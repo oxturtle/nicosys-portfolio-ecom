@@ -72,6 +72,13 @@ Some of the suggestions I provided included:
 
 ---
 
+## Presentation Files
+- Canva presentation: https://canva.link/vj9li9z9mqki260
+- Due to PDF file exceeding GitHub space: https://drive.google.com/file/d/1Om1rC2MustUMBLJuSMJ4lmmhYSH7Efwe/view?usp=sharing
+
+
+---
+
 ## Repository Structure  
 ```
 data/
