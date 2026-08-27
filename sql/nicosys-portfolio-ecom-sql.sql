@@ -46,33 +46,7 @@ From
 	tiktok_s
 ;
 
---Sales by Platform and Total Sales Overall 
-Select
-	  sum(total_tts_sales_clean) as total_tts_sales
-	, sum(total_ss_sales) as total_ss_sales
-	, sum(total_tts_sales_clean) + sum(total_ss_sales) as total_biz_sales 
-From
-	(--Query showing daily sales between TikTok Shop and Squarespace
-		Select
-			  ss.order_date as order_date --Since Squarespace data has more days of year reported, will use date field to represent both shops
-			  , sum(ss.net_sales) as total_ss_sales
-			--, tts.order_date as tt_order_date --commented out becuase we only need 1 date column to represent each store
-			--, tt.total_sales as total_tt_sales --commented out due to null values
-			, coalesce (tts.total_sales,0) as total_tts_sales_clean
-			, sum(ss.net_sales)+(coalesce (tts.total_sales,0)) as total_sales_overall
-
-		From
-			squarespace_s ss
-				left join tiktok_s as tts
-					on ss.order_date=tts.order_date
-		Group By
-			  ss.order_date
-			, tts.order_date
-			, tts.total_sales
-		Order By
-			ss.order_date
-	)
-;
+ 
 
 
 /*
